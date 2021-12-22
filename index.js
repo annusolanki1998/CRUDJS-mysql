@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-var mysqlConnection = mysql.createConnection({
+const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1111',
@@ -55,7 +55,7 @@ app.delete('/employees/:id', (req, res) => {
 
 app.post('/employees', (req, res) => {
     let emp = req.body;
-    var sql = "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
+    let sql = "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
     CALL EmployeeAddOrEdit(@EmpID,@Name,@EmpCode,@Salary);";
     mysqlConnection.query(sql, [emp.EmpID, emp.Name, emp.EmpCode, emp.Salary], (err, rows, fields) => {
         if (!err)
@@ -71,7 +71,7 @@ app.post('/employees', (req, res) => {
 
 app.put('/employees', (req, res) => {
     let emp = req.body;
-    var sql = "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
+    let sql = "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
     CALL EmployeeAddOrEdit(@EmpID,@Name,@EmpCode,@Salary);";
     mysqlConnection.query(sql, [emp.EmpID, emp.Name, emp.EmpCode, emp.Salary], (err, rows, fields) => {
         if (!err)
