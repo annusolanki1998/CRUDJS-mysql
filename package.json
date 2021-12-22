@@ -1,0 +1,17 @@
+{
+  "name": "crud-mysql",
+  "version": "1.0.0",
+  "description": "Performing Crud Operation with mysql anmd nodejs ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Annu Kumari",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
+  }
+}
